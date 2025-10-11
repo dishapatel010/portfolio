@@ -74,9 +74,8 @@ export const ResumeCard = ({
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{
-                opacity: isExpanded ? 1 : 0,
-
-                height: isExpanded ? "auto" : 0,
+                opacity: 1,
+                height: "auto",
               }}
               transition={{
                 duration: 0.7,
