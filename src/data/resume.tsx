@@ -62,6 +62,7 @@ export const DATA = {
   work: [
     {
       company: "Tata",
+      href: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_u6M8GscpX5YrCB4c7_1752061009123_completion_certificate.pdf",
       badges: [],
       location: "Remote",
       title: "Cybersecurity Analyst (Forage Simulation)",
@@ -73,6 +74,7 @@ export const DATA = {
     },
     {
       company: "Tata",
+      href: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_u6M8GscpX5YrCB4c7_1752057335897_completion_certificate.pdf",
       badges: [],
       location: "Remote",
       title: "GenAI Powered Data Analytics (Forage Simulation)",
