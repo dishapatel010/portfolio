@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Computer Science graduate [AIML] passionate about AI and building smart solutions. I love creating, learning, and bringing ideas to life.",
   summary:
-    "Passionate about AI and building smart solutions. Experienced in backend development with Python, Flask, and REST APIs, and skilled in integrating cloud technologies such as Azure and Docker. I also have practical exposure to cybersecurity, GenAI, and AI-powered data analytics. Brings strong analytical skills, adaptability, and a drive to contribute to backend, cloud, or AI-focused roles in dynamic environments.",
+    "Experienced in backend development with Python, Flask, and REST APIs, and skilled in integrating cloud technologies such as Azure and Docker. I also have practical exposure to cybersecurity, GenAI, and AI-powered data analytics. I bring strong analytical skills, adaptability, and a drive to contribute to backend, cloud, or AI-focused roles in dynamic environments.",
   avatarUrl: "/me.png",
   skills: [
     "Python",
