@@ -8,9 +8,9 @@ export const DATA = {
   location: "Dadar, Mumbai 400028, India",
   locationLink: "https://www.google.com/maps/place/Dadar,+Mumbai",
   description:
-    "Computer Science Engineering graduate (Artificial Intelligence and Machine Learning) with hands-on experience in backend development using Python, Flask, and REST APIs. Skilled in integrating cloud technologies such as Azure and Docker, with practical exposure to cybersecurity, GenAI, and AI-powered data analytics.",
+    "Computer Science graduate [AIML] passionate about AI and building smart solutions. I love creating, learning, and bringing ideas to life.",
   summary:
-    "Passionate about building scalable, robust systems and solving data-driven problems. Brings strong analytical skills, adaptability, and a drive to contribute to backend, cloud, or AI-focused roles in dynamic environments.",
+    "Passionate about AI and building smart solutions. Experienced in backend development with Python, Flask, and REST APIs, and skilled in integrating cloud technologies such as Azure and Docker. I also have practical exposure to cybersecurity, GenAI, and AI-powered data analytics. Brings strong analytical skills, adaptability, and a drive to contribute to backend, cloud, or AI-focused roles in dynamic environments.",
   avatarUrl: "/me.png",
   skills: [
     "Python",
@@ -123,7 +123,13 @@ export const DATA = {
       description:
         "Developed an AR-based indoor navigation system using Next.js, MindAR, and MongoDB. Features step-by-step guidance via image recognition, offline support, and a full admin panel for managing navigation paths and targets.",
       technologies: ["Next.js", "MindAR", "MongoDB"],
-      links: [],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/dishapatel010/ARNAV",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
       image: "",
       video: "",
     },
@@ -135,7 +141,13 @@ export const DATA = {
       description:
         "Built a Next.js-based Mini App integrating Last.fm API to display real-time listening habits, including current track, recent plays, and top charts with a responsive Telegram-optimized interface.",
       technologies: ["Next.js", "Last.fm API", "Telegram"],
-      links: [],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/dishapatel010/lastfm",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
       image: "",
       video: "",
     },
@@ -147,7 +159,13 @@ export const DATA = {
       description:
         "Created a decentralized supply chain management app using Ethereum and smart contracts. Implemented product tracking, ownership transfer, and real-time state updates with Sepolia testnet.",
       technologies: ["Ethereum", "Smart Contracts", "Sepolia Testnet"],
-      links: [],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/dishapatel010/supply-chain-dapp",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
       image: "",
       video: "",
     },
@@ -159,7 +177,13 @@ export const DATA = {
       description:
         "Developed a Flask-based tool for analysing and visualizing Spotify user data, including top tracks, artists, and playlists, offering clear insights into user listening patterns.",
       technologies: ["Flask", "Spotify API", "Data Visualization"],
-      links: [],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/dishapatel010/insight-spotify",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
       image: "",
       video: "",
     },
@@ -183,7 +207,13 @@ export const DATA = {
       description:
         "Designed a browser extension to extract payment transaction data from Amazon India, including UPI ID capture and one-click export to HTML with a user-friendly interface.",
       technologies: ["Browser Extension", "HTML"],
-      links: [],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/dishapatel010/AmazonPayHistoryIN",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
       image: "",
       video: "",
     },
@@ -195,7 +225,13 @@ export const DATA = {
       description:
         "Developed a Cloudflare Worker to route Gmail alerts to Telegram with Spacebin links for content viewing. Enabled seamless, real-time email-to-message conversion for quick access.",
       technologies: ["Cloudflare Worker", "Telegram", "Spacebin"],
-      links: [],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/dishapatel010/Email-NotifyTG-Worker",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
       image: "",
       video: "",
     },
@@ -209,13 +245,8 @@ export const DATA = {
       technologies: ["Cloudflare Workers", "KV Storage", "telegra.ph"],
       links: [
         {
-          type: "Website",
-          href: "https://magicui.design",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
           type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
+          href: "https://github.com/dishapatel010/TgStory",
           icon: <Icons.github className="size-3" />,
         },
       ],
