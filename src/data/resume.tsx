@@ -121,15 +121,9 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Built a full-stack automation platform for Instagram Business accounts, enabling users to automate DMs, story replies, and comment interactions. Features include dynamic button-based replies, emoji reactions, and analytics dashboards for engagement insights. Integrated with the Meta Graph API and implemented secure onboarding using OAuth and callback webhooks.",
+        "Built a full-stack automation platform for Instagram Creator and Business accounts, enabling users to automate DMs, story replies, and comment interactions. Features include dynamic button-based replies, emoji reactions, and analytics dashboards for engagement insights. Official Meta Tech Partner and secure onboarding using Better-Auth.",
       technologies: [
-        "Next.js",
-        "TypeScript",
-        "Node.js",
-        "REST APIs",
-        "Meta Graph API",
-        "Cloudflare",
-        "Docker",
+        "Next.js", "TypeScript", "Node.js", "REST APIs", "Meta Graph API", "Cloudflare", "Better-Auth", "Docker",
       ],
       links: [
         {
