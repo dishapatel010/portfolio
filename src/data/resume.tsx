@@ -116,6 +116,32 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Nexiuo – Instagram Automation Platform",
+      href: "https://nexiuo.app",
+      dates: "",
+      active: true,
+      description:
+        "Built a full-stack automation platform for Instagram Business accounts, enabling users to automate DMs, story replies, and comment interactions. Features include dynamic button-based replies, emoji reactions, and analytics dashboards for engagement insights. Integrated with the Meta Graph API and implemented secure onboarding using OAuth and callback webhooks.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "REST APIs",
+        "Meta Graph API",
+        "Cloudflare",
+        "Docker",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://nexiuo.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
       title: "AR Navigation for Indoor Spaces",
       href: "",
       dates: "",
