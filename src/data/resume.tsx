@@ -8,9 +8,9 @@ export const DATA = {
   location: "Dadar, Mumbai 400028, India",
   locationLink: "https://www.google.com/maps/place/Dadar,+Mumbai",
   description:
-    "Computer Science graduate [AIML] passionate about AI and building smart solutions. I love creating, learning, and bringing ideas to life.",
+    "Computer Science Engineer [AI & ML] specializing in AI-driven automation, backend systems, and scalable cloud infrastructure. Creator of Nexiuo, an Instagram automation platform for businesses & creators to scale engagement using AI. I love building products, solving real problems, and bringing ideas to life.",
   summary:
-    "Experienced in backend development with Python, Flask, and REST APIs, and skilled in integrating cloud technologies such as Azure and Docker. I also have practical exposure to cybersecurity, GenAI, and AI-powered data analytics. I bring strong analytical skills, adaptability, and a drive to contribute to backend, cloud, or AI-focused roles in dynamic environments.",
+    "Experienced in backend engineering using Python, TypeScript, Flask, Next.js & REST APIs, with hands-on work in distributed systems, Docker, Cloudflare, and Azure. Practical exposure to Cybersecurity, GenAI, and data-driven automation. Strong problem-solving mindset, rapid learner, and passionate about backend, cloud, and AI engineering roles that demand innovation and performance.",
   avatarUrl: "/me.png",
   skills: [
     "Python",
@@ -20,16 +20,21 @@ export const DATA = {
     "Flask",
     "React",
     "Next.js",
+    "Node.js",
     "Azure",
     "Oracle Cloud",
     "Cloudflare",
     "Docker",
     "SQL",
+    "MongoDB",
     "Git",
     "REST APIs",
+    "Meta Graph API",
     "GenAI",
     "Data Analysis",
     "Visualization",
+    "Better-Auth",
+    "CI/CD",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
