@@ -121,7 +121,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Built a full-stack automation platform for Instagram Creator and Business accounts, enabling users to automate DMs, story replies, and comment interactions. Features include dynamic button-based replies, emoji reactions, and analytics dashboards for engagement insights. Official Meta Tech Partner and secure onboarding using Better-Auth.",
+        "Built a full-scale Instagram automation platform for creators and businesses to automate audience engagement using AI-driven workflows. Supports automated DMs, comment responses, and story mention replies with configurable actions, dynamic messaging, and emoji reactions. Includes analytics dashboards, inbox management, and secure onboarding via Better-Auth. Official Meta Tech Partner integration for Instagram Business APIs.",
       technologies: [
         "Next.js", "TypeScript", "Node.js", "REST APIs", "Meta Graph API", "Cloudflare", "Better-Auth", "Docker",
       ],
@@ -132,6 +132,30 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "HEX 0x1A",
+      href: "",
+      dates: "",
+      active: true,
+      description:
+        "Built a Telegram mini-app using Next.js and MongoDB that acts as a shared resource hub for a community. Users can browse a feed, search by tags, like and save resources, while admins moderate submissions, review reports, and manage organizations. Integrated with rich filtering, in-app notifications, Authorization & Security using Better Auth. Used by 400+ active users.",
+      technologies: ["Next.js", "MongoDB", "Better-Auth", "Telegram"],
+      links: [],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Community Management Bot",
+      href: "",
+      dates: "",
+      active: true,
+      description:
+        "Built a Telegram bot that runs a gamified \"guild\" community, handling member onboarding by invite, enforcing group rules, managing bans, and tracking who invited whom. It adds game-like features such as ranks, tasks, virtual shop items/passes, and subscription checks, all backed by a database and background scheduler.",
+      technologies: ["Telegram Bot API", "Database", "Background Scheduler"],
+      links: [],
       image: "",
       video: "",
     },
