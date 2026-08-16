@@ -66,6 +66,18 @@ export const DATA = {
 
   work: [
     {
+      company: "Tata Consultancy Services (TCS)",
+      href: "https://www.tcs.com/",
+      badges: [],
+      location: "Mumbai, India",
+      title: "TCSer",
+      logoUrl: "https://www.tcs.com/content/dam/global-tcs/en/images/who-we-are/media-kit/TCS-logo-black-CMYK.svg",
+      start: "June 2026",
+      end: "Present",
+      description:
+        "Contributing as a TCSer in Mumbai, focusing on software systems development, application maintenance, and collaborative engineering practices within the delivery team.",
+    },
+    {
       company: "Tata",
       href: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_u6M8GscpX5YrCB4c7_1752061009123_completion_certificate.pdf",
       badges: [],
