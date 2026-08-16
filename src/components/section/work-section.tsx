@@ -30,16 +30,21 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
 
 export default function WorkSection() {
   return (
-    <div className="w-full grid gap-6">
-      {DATA.work.map((work) => (
+    <div className="w-full flex flex-col">
+      {DATA.work.map((work, index) => (
         <div
           key={work.company}
-          className="w-full grid gap-2"
+          className="flex gap-4 md:gap-6"
         >
-          <div className="flex items-center gap-x-3 justify-between w-full text-left">
-            <div className="flex items-center gap-x-3 flex-1 min-w-0">
-              <LogoImage src={work.logoUrl} alt={work.company} />
-              <div className="flex-1 min-w-0 gap-0.5 flex flex-col">
+          <div className="flex flex-col items-center">
+            <LogoImage src={work.logoUrl} alt={work.company} />
+            {index < DATA.work.length - 1 && (
+              <div className="w-px bg-border flex-1 min-h-[20px] mt-2" />
+            )}
+          </div>
+          <div className="flex-1 pb-6 last:pb-0 grid gap-2">
+            <div className="flex items-start justify-between w-full text-left gap-4">
+              <div className="flex flex-col gap-0.5">
                 <div className="font-semibold leading-none">
                   {work.company}
                 </div>
@@ -47,18 +52,16 @@ export default function WorkSection() {
                   {work.title}
                 </div>
               </div>
-            </div>
-            <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
-              <span>
+              <div className="text-xs tabular-nums text-muted-foreground text-right flex-none pt-0.5">
                 {work.start} - {work.end ?? "Present"}
-              </span>
+              </div>
             </div>
+            {work.description && (
+              <div className="text-xs sm:text-sm text-muted-foreground">
+                {work.description}
+              </div>
+            )}
           </div>
-          {work.description && (
-            <div className="ml-11 md:ml-13 text-xs sm:text-sm text-muted-foreground">
-              {work.description}
-            </div>
-          )}
         </div>
       ))}
     </div>
