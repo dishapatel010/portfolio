@@ -36,91 +36,6 @@ const getFontData = async () => {
     }
 };
 
-const styles = {
-    outerWrapper: {
-        height: "100%",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        backgroundColor: "#ffffff",
-        position: "relative",
-    },
-    middleWrapper: {
-        height: "100%",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        backgroundColor: "#ffffff",
-        position: "relative",
-        padding: "40px",
-    },
-    wrapper: {
-        height: "100%",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        backgroundColor: "#fafafa",
-        position: "relative",
-        padding: "40px",
-        border: "1px solid #e5e5e5",
-        borderRadius: "12px",
-    },
-    imageSection: {
-        position: "absolute",
-        top: "40px",
-        left: "40px",
-        display: "flex",
-        alignItems: "center",
-        zIndex: "2",
-    },
-    mainContainer: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        justifyContent: "flex-end",
-        height: "100%",
-        width: "100%",
-        position: "relative",
-        zIndex: "1",
-    },
-    image: {
-        width: "140px",
-        height: "140px",
-        borderRadius: "24px",
-        border: "4px solid #e5e5e5",
-        objectFit: "cover",
-    },
-    title: {
-        fontFamily: "Clash Display",
-        fontSize: "48px",
-        fontWeight: "600",
-        lineHeight: "1.1",
-        textAlign: "left",
-        color: "#000000",
-        marginBottom: "16px",
-        letterSpacing: "-0.02em",
-        maxWidth: "900px",
-    },
-    description: {
-        fontSize: "20px",
-        fontWeight: "400",
-        lineHeight: "1.5",
-        textAlign: "left",
-        maxWidth: "800px",
-        color: "#404040",
-        marginBottom: "16px",
-        textWrap: "balance",
-    },
-    date: {
-        fontSize: "16px",
-        fontWeight: "400",
-        lineHeight: "1.5",
-        textAlign: "left",
-        color: "#666666",
-        marginBottom: "32px",
-    },
-} as const;
-
 export default async function Image({
     params,
 }: {
@@ -137,33 +52,22 @@ export default async function Image({
         if (!post) {
             return new ImageResponse(
                 (
-                    <div style={styles.outerWrapper}>
-                        <div style={styles.middleWrapper}>
-                            <div style={styles.wrapper}>
-                                {imageUrl && (
-                                    <div style={styles.imageSection}>
-                                        <img src={imageUrl} alt="Blog Post" style={styles.image} />
-                                    </div>
-                                )}
-                                <div style={styles.mainContainer}>
-                                    <div style={styles.title}>Post Not Found</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div
+                        style={{
+                            height: "100%",
+                            width: "100%",
+                            display: "flex",
+                            flexDirection: "column",
+                            backgroundColor: "#030712",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
+                        <div style={{ color: "#ffffff", fontSize: "48px" }}>Post Not Found</div>
                     </div>
                 ),
                 {
                     ...size,
-                    fonts: fontData
-                        ? [
-                            {
-                                name: "Clash Display",
-                                data: fontData.clashDisplay,
-                                weight: 600,
-                                style: "normal",
-                            },
-                        ]
-                        : undefined,
                 }
             );
         }
@@ -181,22 +85,165 @@ export default async function Image({
 
         return new ImageResponse(
             (
-                <div style={styles.outerWrapper}>
-                    <div style={styles.middleWrapper}>
-                        <div style={styles.wrapper}>
-                            {imageUrl && (
-                                <div style={styles.imageSection}>
-                                    <img src={imageUrl} alt={title} style={styles.image} />
+                <div
+                    style={{
+                        height: "100%",
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        backgroundColor: "#030712",
+                        backgroundImage: "linear-gradient(135deg, #090e1a 0%, #030712 100%)",
+                        position: "relative",
+                        padding: "60px 80px",
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }}
+                >
+                    {/* Background Ambient Glows */}
+                    <div
+                        style={{
+                            position: "absolute",
+                            right: "-100px",
+                            bottom: "-100px",
+                            width: "500px",
+                            height: "500px",
+                            borderRadius: "50%",
+                            background: "radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(14, 165, 233, 0) 70%)",
+                            filter: "blur(60px)",
+                            display: "flex",
+                        }}
+                    />
+                    <div
+                        style={{
+                            position: "absolute",
+                            left: "-150px",
+                            top: "-150px",
+                            width: "500px",
+                            height: "500px",
+                            borderRadius: "50%",
+                            background: "radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(99, 102, 241, 0) 70%)",
+                            filter: "blur(60px)",
+                            display: "flex",
+                        }}
+                    />
+
+                    {/* Content Section (Borderless) */}
+                    <div
+                        style={{
+                            height: "100%",
+                            width: "100%",
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                            position: "relative",
+                        }}
+                    >
+                        {/* Left Content Side */}
+                        <div
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "space-between",
+                                height: "100%",
+                                flex: "1",
+                                paddingRight: "40px",
+                            }}
+                        >
+                            {/* Role / Tag */}
+                            <div style={{ display: "flex", flexDirection: "column" }}>
+                                <div
+                                    style={{
+                                        fontSize: "14px",
+                                        fontWeight: "600",
+                                        letterSpacing: "0.2em",
+                                        textTransform: "uppercase",
+                                        color: "#38bdf8",
+                                        marginBottom: "24px",
+                                        fontFamily: "Cabinet Grotesk",
+                                    }}
+                                >
+                                    {publishedDate ? `Published ${publishedDate}` : "Blog Post"}
                                 </div>
-                            )}
-                            <div style={styles.mainContainer}>
-                                <div style={styles.title}>{title}</div>
-                                {description && (
-                                    <div style={styles.description}>{description}</div>
-                                )}
-                                {publishedDate && <div style={styles.date}>{publishedDate}</div>}
+                                <div
+                                    style={{
+                                        fontFamily: "Clash Display",
+                                        fontSize: "48px",
+                                        fontWeight: "600",
+                                        lineHeight: "1.2",
+                                        color: "#ffffff",
+                                        marginBottom: "20px",
+                                        letterSpacing: "-0.02em",
+                                    }}
+                                >
+                                    {title}
+                                </div>
+                                <div
+                                    style={{
+                                        fontSize: "20px",
+                                        lineHeight: "1.6",
+                                        color: "#94a3b8",
+                                        maxWidth: "680px",
+                                        fontFamily: "Cabinet Grotesk",
+                                    }}
+                                >
+                                    {description}
+                                </div>
+                            </div>
+
+                            {/* Footer links */}
+                            <div
+                                style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "24px",
+                                    fontSize: "16px",
+                                    color: "#64748b",
+                                    fontFamily: "Cabinet Grotesk",
+                                }}
+                            >
+                                <span style={{ display: "flex" }}>{DATA.url.replace("https://", "")}/blog</span>
+                                <span style={{ color: "rgba(255,255,255,0.15)" }}>|</span>
+                                <span style={{ display: "flex" }}>{DATA.name}</span>
                             </div>
                         </div>
+
+                        {/* Right Profile Side */}
+                        {imageUrl && (
+                            <div
+                                style={{
+                                    display: "flex",
+                                    position: "relative",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                }}
+                            >
+                                <div
+                                    style={{
+                                        position: "absolute",
+                                        width: "230px",
+                                        height: "230px",
+                                        borderRadius: "50%",
+                                        background: "linear-gradient(135deg, #0ea5e9, #6366f1)",
+                                        opacity: "0.2",
+                                        filter: "blur(20px)",
+                                        display: "flex",
+                                    }}
+                                />
+                                <img
+                                    src={imageUrl}
+                                    alt={title}
+                                    style={{
+                                        width: "210px",
+                                        height: "210px",
+                                        borderRadius: "40px",
+                                        border: "2px solid rgba(255, 255, 255, 0.15)",
+                                        objectFit: "cover",
+                                        zIndex: "2",
+                                    }}
+                                />
+                            </div>
+                        )}
                     </div>
                 </div>
             ),

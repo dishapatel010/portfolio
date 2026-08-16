@@ -6,14 +6,15 @@ export default function OGPreviewPage() {
   const [selectedOption, setSelectedOption] = useState<"A" | "B" | "C">("A");
 
   const avatarUrl = DATA.avatarUrl || "/me.png";
+  const ogDescription = "Software Engineer at TCS specializing in AI-driven automation, backend systems, and scalable cloud architectures. Creator of Nexiuo.";
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 p-8 flex flex-col items-center justify-start gap-8 font-sans">
-      <div className="max-w-5xl w-full flex flex-col gap-4">
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 p-6 md:p-12 flex flex-col items-center justify-start gap-8 font-sans w-full max-w-none">
+      <div className="w-full max-w-7xl flex flex-col gap-4">
         <h1 className="text-3xl font-bold tracking-tight">OpenGraph Design Explorer</h1>
-        <p className="text-zinc-400 text-sm">
+        <p className="text-zinc-400 text-sm max-w-3xl">
           Below are the three borderless design directions for your portfolio's social preview cards. 
-          They are rendered below at a 1200x630 resolution (scaled down visually for previewing).
+          They are rendered below at a 1200x630 resolution (scaled to fit your screen size dynamically).
         </p>
 
         {/* Tab Selection */}
@@ -35,14 +36,14 @@ export default function OGPreviewPage() {
       </div>
 
       {/* Preview Card Shell */}
-      <div className="border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl bg-zinc-900 p-4 max-w-5xl w-full flex justify-center items-center">
-        <div className="relative w-[1200px] h-[630px] overflow-hidden rounded-xl border border-zinc-800 origin-center scale-[0.4] sm:scale-[0.5] md:scale-[0.6] lg:scale-[0.8] my-[-180px] sm:my-[-140px] md:my-[-100px] lg:my-[-50px] transition-all">
+      <div className="border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl bg-zinc-900 p-8 w-full max-w-7xl flex justify-center items-center">
+        <div className="relative w-[1200px] h-[630px] overflow-hidden rounded-xl border border-zinc-800 origin-center scale-[0.35] xs:scale-[0.45] sm:scale-[0.6] md:scale-[0.75] lg:scale-[0.9] xl:scale-[1] my-[-180px] sm:my-[-120px] md:my-[-70px] lg:my-[-30px] xl:my-0 transition-all flex-none">
           
           {/* ========================================================================= */}
           {/* OPTION A: WATERMARKED MONOGRAM */}
           {/* ========================================================================= */}
           {selectedOption === "A" && (
-            <div className="w-full h-full bg-[#030712] relative flex p-16 justify-between items-center overflow-hidden" style={{ backgroundImage: "linear-gradient(135deg, #090e1a 0%, #030712 100%)" }}>
+            <div className="w-full h-full bg-[#030712] relative flex p-[60px_80px] justify-between items-center overflow-hidden" style={{ backgroundImage: "linear-gradient(135deg, #090e1a 0%, #030712 100%)" }}>
               {/* Giant Background Watermark "NK" */}
               <div className="absolute right-[-40px] top-[-80px] text-[480px] font-bold text-white/[0.02] select-none pointer-events-none font-sans leading-none tracking-tighter">
                 NK
@@ -61,8 +62,8 @@ export default function OGPreviewPage() {
                   <div className="text-white text-6xl font-bold font-sans tracking-tight mb-6 leading-none">
                     {DATA.name}
                   </div>
-                  <div className="text-zinc-400 text-lg leading-relaxed max-w-[650px] font-sans">
-                    {DATA.description}
+                  <div className="text-zinc-400 text-lg leading-relaxed max-w-[680px] font-sans">
+                    {ogDescription}
                   </div>
                 </div>
 
@@ -79,7 +80,7 @@ export default function OGPreviewPage() {
                 <img
                   src={avatarUrl}
                   alt={DATA.name}
-                  className="w-[210px] h-[210px] rounded-[40px] border-2 border-white/10 object-cover z-10 shadow-2xl"
+                  className="w-[210px] h-[210px] rounded-[40px] border-2 border-white/10 object-cover z-10 shadow-2xl bg-[#030712]"
                 />
               </div>
             </div>
@@ -94,7 +95,7 @@ export default function OGPreviewPage() {
               <div className="absolute right-0 bottom-0 w-[600px] h-[600px] rounded-full bg-indigo-600/10 blur-[120px]" />
               
               {/* Left Column (Text Pane) */}
-              <div className="flex-[3] flex flex-col justify-between p-16 z-10">
+              <div className="flex-[3] flex flex-col justify-between p-[60px_80px] z-10">
                 <div className="flex flex-col">
                   <div className="text-[#818cf8] text-xs font-semibold tracking-[0.25em] uppercase mb-8 font-sans">
                     TATA CONSULTANCY SERVICES
@@ -103,7 +104,7 @@ export default function OGPreviewPage() {
                     {DATA.name}
                   </div>
                   <div className="text-zinc-400 text-lg leading-relaxed max-w-[600px] font-sans">
-                    {DATA.description}
+                    {ogDescription}
                   </div>
                 </div>
 
@@ -125,7 +126,7 @@ export default function OGPreviewPage() {
                   <img
                     src={avatarUrl}
                     alt={DATA.name}
-                    className="w-[200px] h-[200px] rounded-[32px] border border-zinc-700/60 object-cover z-10 relative shadow-2xl"
+                    className="w-[200px] h-[200px] rounded-[32px] border border-zinc-700/60 object-cover z-10 relative shadow-2xl bg-[#090d16]"
                   />
                 </div>
               </div>
@@ -136,7 +137,7 @@ export default function OGPreviewPage() {
           {/* OPTION C: ABSTRACT GEOMETRY */}
           {/* ========================================================================= */}
           {selectedOption === "C" && (
-            <div className="w-full h-full bg-[#05070c] relative flex p-16 justify-between items-center overflow-hidden">
+            <div className="w-full h-full bg-[#05070c] relative flex p-[60px_80px] justify-between items-center overflow-hidden">
               {/* Engineering bracket graphic in background */}
               <div className="absolute right-20 top-20 text-[260px] font-light text-zinc-800/20 select-none pointer-events-none font-mono leading-none">
                 &#123; &#125;
@@ -159,7 +160,7 @@ export default function OGPreviewPage() {
                     {DATA.name}
                   </div>
                   <div className="text-zinc-400 text-lg leading-relaxed max-w-[650px] font-sans">
-                    {DATA.description}
+                    {ogDescription}
                   </div>
                 </div>
 
@@ -176,7 +177,7 @@ export default function OGPreviewPage() {
                 <img
                   src={avatarUrl}
                   alt={DATA.name}
-                  className="w-[210px] h-[210px] rounded-2xl border border-zinc-800 object-cover z-10 shadow-2xl"
+                  className="w-[210px] h-[210px] rounded-2xl border border-zinc-800 object-cover z-10 shadow-2xl bg-[#05070c]"
                 />
               </div>
             </div>

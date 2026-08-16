@@ -37,6 +37,8 @@ export default async function Image() {
             ? new URL(DATA.avatarUrl, DATA.url).toString()
             : undefined;
 
+        const ogDescription = "Thoughts on software development, backend engineering, cloud systems, and AI-driven automation.";
+
         return new ImageResponse(
             (
                 <div
@@ -48,7 +50,7 @@ export default async function Image() {
                         backgroundColor: "#030712",
                         backgroundImage: "linear-gradient(135deg, #090e1a 0%, #030712 100%)",
                         position: "relative",
-                        padding: "50px",
+                        padding: "60px 80px",
                         justifyContent: "center",
                         alignItems: "center",
                     }}
@@ -81,7 +83,7 @@ export default async function Image() {
                         }}
                     />
 
-                    {/* Outer Panel Grid Border */}
+                    {/* Content Section (Borderless) */}
                     <div
                         style={{
                             height: "100%",
@@ -90,10 +92,6 @@ export default async function Image() {
                             flexDirection: "row",
                             alignItems: "center",
                             justifyContent: "space-between",
-                            backgroundColor: "rgba(15, 23, 42, 0.3)",
-                            border: "1px solid rgba(255, 255, 255, 0.08)",
-                            borderRadius: "24px",
-                            padding: "60px",
                             position: "relative",
                         }}
                     >
@@ -145,7 +143,7 @@ export default async function Image() {
                                         fontFamily: "Cabinet Grotesk",
                                     }}
                                 >
-                                    {description}
+                                    {ogDescription}
                                 </div>
                             </div>
 

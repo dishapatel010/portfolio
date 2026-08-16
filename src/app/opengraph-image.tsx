@@ -35,6 +35,8 @@ export default async function Image() {
             ? new URL(DATA.avatarUrl, DATA.url).toString()
             : undefined;
 
+        const ogDescription = "Software Engineer at TCS specializing in AI-driven automation, backend systems, and scalable cloud architectures. Creator of Nexiuo.";
+
         return new ImageResponse(
             (
                 <div
@@ -43,163 +45,175 @@ export default async function Image() {
                         width: "100%",
                         display: "flex",
                         flexDirection: "column",
-                        backgroundColor: "#030712",
-                        backgroundImage: "linear-gradient(135deg, #090e1a 0%, #030712 100%)",
+                        justifyContent: "space-between",
+                        backgroundColor: "#0F131A", // Deep Material Tonal Surface
+                        padding: "56px",
                         position: "relative",
-                        padding: "50px",
-                        justifyContent: "center",
-                        alignItems: "center",
                     }}
                 >
-                    {/* Background Ambient Glows */}
+                    {/* Ambient Warm Accent Glows */}
                     <div
                         style={{
                             position: "absolute",
+                            top: "-100px",
                             right: "-100px",
-                            bottom: "-100px",
-                            width: "500px",
-                            height: "500px",
+                            width: "600px",
+                            height: "600px",
                             borderRadius: "50%",
-                            background: "radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(14, 165, 233, 0) 70%)",
-                            filter: "blur(60px)",
+                            background: "radial-gradient(circle, rgba(66, 133, 244, 0.15) 0%, transparent 70%)",
                             display: "flex",
                         }}
                     />
                     <div
                         style={{
                             position: "absolute",
-                            left: "-150px",
-                            top: "-150px",
+                            bottom: "-100px",
+                            left: "-100px",
                             width: "500px",
                             height: "500px",
                             borderRadius: "50%",
-                            background: "radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(99, 102, 241, 0) 70%)",
-                            filter: "blur(60px)",
+                            background: "radial-gradient(circle, rgba(52, 168, 83, 0.12) 0%, transparent 70%)",
                             display: "flex",
                         }}
                     />
 
-                    {/* Outer Panel Grid Border */}
-                    <div
-                        style={{
-                            height: "100%",
-                            width: "100%",
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "space-between",
-                            backgroundColor: "rgba(15, 23, 42, 0.3)",
-                            border: "1px solid rgba(255, 255, 255, 0.08)",
-                            borderRadius: "24px",
-                            padding: "60px",
-                            position: "relative",
-                        }}
-                    >
-                        {/* Left Content Side */}
+                    {/* Top Header: Brand & Google Spectrum Accent */}
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                        {/* Custom Domain Pill */}
                         <div
                             style={{
                                 display: "flex",
-                                flexDirection: "column",
-                                justifyContent: "space-between",
-                                height: "100%",
-                                flex: "1",
-                                paddingRight: "40px",
+                                alignItems: "center",
+                                gap: "10px",
+                                backgroundColor: "#1D2432",
+                                padding: "10px 20px",
+                                borderRadius: "100px",
+                                border: "1px solid rgba(255, 255, 255, 0.08)",
                             }}
                         >
-                            {/* Role / Tag */}
-                            <div style={{ display: "flex", flexDirection: "column" }}>
+                            <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#34A853" }} />
+                            <span style={{ color: "#E1E2E9", fontSize: "18px", fontWeight: 600, fontFamily: "Cabinet Grotesk" }}>
+                                katkar.in
+                            </span>
+                        </div>
+
+                        {/* Google Four-Color Signature Dots */}
+                        <div style={{ display: "flex", gap: "8px" }}>
+                            <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#4285F4" }} />
+                            <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#EA4335" }} />
+                            <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#FBBC05" }} />
+                            <div style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#34A853" }} />
+                        </div>
+                    </div>
+
+                    {/* Middle Main Content */}
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "20px", maxWidth: "760px" }}>
+                            {/* Expressive Material Role Chips */}
+                            <div style={{ display: "flex", gap: "12px" }}>
                                 <div
                                     style={{
-                                        fontSize: "14px",
-                                        fontWeight: "600",
-                                        letterSpacing: "0.2em",
-                                        textTransform: "uppercase",
-                                        color: "#38bdf8",
-                                        marginBottom: "24px",
+                                        backgroundColor: "#2B3448",
+                                        color: "#D3E3FD",
+                                        padding: "8px 18px",
+                                        borderRadius: "12px",
+                                        fontSize: "18px",
+                                        fontWeight: 600,
                                         fontFamily: "Cabinet Grotesk",
                                     }}
                                 >
-                                    TCSer & Software Engineer
+                                    Software Engineer
                                 </div>
                                 <div
                                     style={{
-                                        fontFamily: "Clash Display",
-                                        fontSize: "64px",
-                                        fontWeight: "600",
-                                        lineHeight: "1.1",
-                                        color: "#ffffff",
-                                        marginBottom: "20px",
-                                        letterSpacing: "-0.02em",
-                                    }}
-                                >
-                                    {DATA.name}
-                                </div>
-                                <div
-                                    style={{
-                                        fontSize: "20px",
-                                        lineHeight: "1.6",
-                                        color: "#94a3b8",
-                                        maxWidth: "680px",
+                                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                                        color: "#C4C6D0",
+                                        padding: "8px 18px",
+                                        borderRadius: "12px",
+                                        fontSize: "18px",
+                                        fontWeight: 500,
+                                        border: "1px solid rgba(255, 255, 255, 0.1)",
                                         fontFamily: "Cabinet Grotesk",
                                     }}
                                 >
-                                    {DATA.description}
+                                    Builder
                                 </div>
                             </div>
 
-                            {/* Footer links */}
-                            <div
+                            {/* Typography: Bold Title */}
+                            <h1
                                 style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    gap: "24px",
-                                    fontSize: "16px",
-                                    color: "#64748b",
+                                    fontSize: "68px",
+                                    fontWeight: 800,
+                                    color: "#F0F4F9",
+                                    margin: 0,
+                                    letterSpacing: "-0.03em",
+                                    lineHeight: 1.05,
+                                    fontFamily: "Clash Display",
+                                }}
+                            >
+                                {DATA.name}
+                            </h1>
+
+                            {/* Humanized Bio */}
+                            <p
+                                style={{
+                                    fontSize: "22px",
+                                    color: "#C4C6D0",
+                                    margin: 0,
+                                    lineHeight: 1.4,
+                                    fontWeight: 400,
                                     fontFamily: "Cabinet Grotesk",
                                 }}
                             >
-                                <span style={{ display: "flex" }}>{DATA.url.replace("https://", "")}</span>
-                                <span style={{ color: "rgba(255,255,255,0.15)" }}>|</span>
-                                <span style={{ display: "flex" }}>github.com/dishapatel010</span>
-                            </div>
+                                {ogDescription}
+                            </p>
                         </div>
 
-                        {/* Right Profile Side */}
+                        {/* Expressive Squircle Profile Frame */}
                         {imageUrl && (
                             <div
                                 style={{
+                                    width: "210px",
+                                    height: "210px",
+                                    borderRadius: "48px", // Material Expressive Squircle
+                                    backgroundColor: "#1E2430",
+                                    padding: "8px",
                                     display: "flex",
-                                    position: "relative",
-                                    justifyContent: "center",
-                                    alignItems: "center",
+                                    boxShadow: "0 16px 32px rgba(0, 0, 0, 0.4)",
+                                    border: "1px solid rgba(255, 255, 255, 0.12)",
                                 }}
                             >
-                                <div
-                                    style={{
-                                        position: "absolute",
-                                        width: "230px",
-                                        height: "230px",
-                                        borderRadius: "50%",
-                                        background: "linear-gradient(135deg, #0ea5e9, #6366f1)",
-                                        opacity: "0.2",
-                                        filter: "blur(20px)",
-                                        display: "flex",
-                                    }}
-                                />
                                 <img
                                     src={imageUrl}
                                     alt={DATA.name}
                                     style={{
-                                        width: "210px",
-                                        height: "210px",
+                                        width: "100%",
+                                        height: "100%",
                                         borderRadius: "40px",
-                                        border: "2px solid rgba(255, 255, 255, 0.15)",
                                         objectFit: "cover",
-                                        zIndex: "2",
                                     }}
                                 />
                             </div>
                         )}
+                    </div>
+
+                    {/* Bottom Footer Metadata */}
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            borderTop: "1px solid rgba(255, 255, 255, 0.08)",
+                            paddingTop: "24px",
+                            color: "#8E919E",
+                            fontSize: "18px",
+                            fontWeight: 500,
+                            fontFamily: "Cabinet Grotesk",
+                        }}
+                    >
+                        <span>github.com/dishapatel010</span>
+                        <span style={{ color: "#E1E2E9", fontWeight: 600 }}>Portfolio 2026</span>
                     </div>
                 </div>
             ),
