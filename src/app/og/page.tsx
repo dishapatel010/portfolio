@@ -2,7 +2,9 @@
 import React, { useState } from "react";
 import { DATA } from "@/data/resume";
 
-type OptionKey = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O";
+type OptionKey = 
+  | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O"
+  | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W";
 
 export default function OGPreviewPage() {
   const [selectedOption, setSelectedOption] = useState<OptionKey>("A");
@@ -26,6 +28,14 @@ export default function OGPreviewPage() {
     { key: "M", label: "Raza Modernist Art" },
     { key: "N", label: "Marine Drive Deco" },
     { key: "O", label: "Matchbox Ephemera" },
+    { key: "P", label: "Risograph Zine" },
+    { key: "Q", label: "De Stijl Grid" },
+    { key: "R", label: "Vaporwave Retro" },
+    { key: "S", label: "Ukiyo-e Print" },
+    { key: "T", label: "Memphis Postmod" },
+    { key: "U", label: "Stained Glass" },
+    { key: "V", label: "Psychedelic Art" },
+    { key: "W", label: "Cyberpunk HUD" },
   ];
 
   return (
@@ -33,7 +43,7 @@ export default function OGPreviewPage() {
       <div className="w-full max-w-7xl flex flex-col gap-4">
         <h1 className="text-3xl font-bold tracking-tight">OpenGraph Design Explorer</h1>
         <p className="text-zinc-400 text-sm max-w-3xl">
-          Below are the fifteen premium design concepts for your portfolio's social preview cards. 
+          Below are the twenty-three premium design concepts for your portfolio's social preview cards. 
           They are rendered below at a 1200x630 resolution (scaled dynamically to fit your screen size).
         </p>
 
@@ -43,7 +53,7 @@ export default function OGPreviewPage() {
             <button
               key={opt.key}
               onClick={() => setSelectedOption(opt.key)}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
                 selectedOption === opt.key
                   ? "bg-zinc-800 text-white shadow-sm"
                   : "text-zinc-400 hover:text-zinc-200"
@@ -284,7 +294,7 @@ export default function OGPreviewPage() {
               <div className="absolute right-[-100px] top-[-100px] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(251,191,36,0.06)_0%,transparent_70%)] pointer-events-none" />
               <div className="flex-[3] flex flex-col justify-between h-full z-10 pr-12">
                 <div className="flex flex-col gap-6">
-                  <div className="bg-[#1C1C1F] border border-zinc-800 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col gap-3 max-w-[550px] relative">
+                  <div className="bg-[#1C1C1F] border border-zinc-800/80 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col gap-3 max-w-[550px] relative">
                     <div className="absolute top-4 right-4 w-3.5 h-3.5 rounded-full bg-emerald-500/80 animate-pulse" />
                     <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase">MATTE LID DECAL</span>
                     <h2 className="text-white text-3xl font-extrabold tracking-tight font-sans mt-1">Nikhil Katkar</h2>
@@ -484,55 +494,34 @@ export default function OGPreviewPage() {
           {/* ========================================================================= */}
           {selectedOption === "L" && (
             <div className="w-full h-full bg-[#0D1017] flex flex-col justify-between p-14 relative overflow-hidden font-mono text-zinc-400">
-              {/* Grid Lines */}
               <div className="absolute inset-0 opacity-5 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none" />
-
-              {/* Transit lines graphics */}
               <svg className="absolute inset-0 w-full h-full opacity-60" xmlns="http://www.w3.org/2000/svg">
-                {/* Western Line - Cyan */}
                 <path d="M 150,0 L 150,630" stroke="#00E5FF" strokeWidth="6" fill="none" />
-                {/* Central Line - Red */}
                 <path d="M 150,450 L 500,450 L 800,200 L 1200,200" stroke="#EF4444" strokeWidth="6" fill="none" />
-                {/* Harbour Line - Yellow */}
                 <path d="M 150,450 L 600,450 L 900,550 L 1200,550" stroke="#FBBF24" strokeWidth="6" fill="none" />
-                
-                {/* Junction Nodes */}
                 <circle cx="150" cy="450" r="14" fill="#1E293B" stroke="#FFFFFF" strokeWidth="4" />
                 <circle cx="150" cy="200" r="8" fill="#1E293B" stroke="#00E5FF" strokeWidth="3" />
                 <circle cx="500" cy="450" r="8" fill="#1E293B" stroke="#EF4444" strokeWidth="3" />
                 <circle cx="800" cy="200" r="8" fill="#1E293B" stroke="#EF4444" strokeWidth="3" />
               </svg>
-
-              {/* Indicator Board header */}
               <div className="flex justify-between items-center z-10 w-full">
                 <div className="flex flex-col">
                   <span className="text-[10px] text-zinc-500 font-bold tracking-[0.2em]">// MUMBAI DIVISION TRANSIT SCHEMATIC</span>
                   <h1 className="text-4xl font-black text-white leading-none mt-2">MUMBAI LOCAL SYSTEM</h1>
                 </div>
-                {/* Retro Digital Indicator Look */}
                 <div className="bg-black border-2 border-zinc-800 p-3 rounded-lg flex flex-col font-mono text-[#F59E0B] shadow-inner text-right">
                   <span className="text-[9px] text-zinc-600 font-bold">NEXT ARRIVAL</span>
                   <span className="text-xl font-bold tracking-widest animate-pulse">KATKAR.IN</span>
                 </div>
               </div>
-
-              {/* Station Labelings */}
               <div className="flex justify-between items-end z-10 w-full mt-auto relative">
-                {/* Text specs */}
                 <div className="flex flex-col gap-4 bg-zinc-950/95 border border-zinc-800 p-6 rounded-2xl max-w-[650px] shadow-2xl">
                   <div className="text-xs text-[#00E5FF] font-bold tracking-widest">// CONVERGENCE STATION: Dadar Interchange</div>
                   <h2 className="text-white text-3xl font-extrabold tracking-tight font-sans">{DATA.name}</h2>
                   <p className="text-zinc-400 text-sm leading-relaxed font-sans">{ogDescription}</p>
                 </div>
-
-                {/* Local Node descriptions */}
-                <div className="absolute left-[80px] top-[-100px] text-[10px] text-white bg-zinc-900/90 border border-[#00E5FF]/40 px-2 py-1 rounded">
-                  NODE: FRONTEND
-                </div>
-                <div className="absolute left-[400px] top-[-30px] text-[10px] text-white bg-zinc-900/90 border border-[#EF4444]/40 px-2 py-1 rounded">
-                  NODE: BACKEND
-                </div>
-
+                <div className="absolute left-[80px] top-[-100px] text-[10px] text-white bg-zinc-900/90 border border-[#00E5FF]/40 px-2 py-1 rounded">NODE: FRONTEND</div>
+                <div className="absolute left-[400px] top-[-30px] text-[10px] text-white bg-zinc-900/90 border border-[#EF4444]/40 px-2 py-1 rounded">NODE: BACKEND</div>
                 <div className="relative p-1.5 border border-zinc-800 bg-zinc-900 rounded-2xl flex-none ml-6 shadow-2xl">
                   <img src={avatarUrl} alt={DATA.name} className="w-[130px] h-[130px] rounded-xl object-cover grayscale" />
                 </div>
@@ -545,7 +534,6 @@ export default function OGPreviewPage() {
           {/* ========================================================================= */}
           {selectedOption === "M" && (
             <div className="w-full h-full bg-[#050508] flex p-0 items-stretch overflow-hidden relative text-white">
-              {/* Concentric vector circles (Raza Bindu) */}
               <div className="absolute left-[-80px] top-[15%] w-[420px] h-[420px] rounded-full border-2 border-zinc-800 flex items-center justify-center opacity-40">
                 <div className="w-[340px] h-[340px] rounded-full border border-zinc-800/80 flex items-center justify-center">
                   <div className="w-[260px] h-[260px] rounded-full border-2 border-amber-500/10 flex items-center justify-center">
@@ -555,13 +543,9 @@ export default function OGPreviewPage() {
                   </div>
                 </div>
               </div>
-
-              {/* Layout splits */}
               <div className="flex-[3] flex flex-col justify-between p-16 z-10 pl-[380px] relative">
                 <div className="flex flex-col gap-4">
                   <span className="text-amber-500 text-xs font-bold tracking-[0.3em] uppercase font-sans">progressive modernist group / raza study</span>
-                  
-                  {/* Vertical typography layout alignment */}
                   <div className="flex gap-6 mt-4">
                     <div className="flex flex-col text-white text-6xl font-black font-sans leading-none tracking-tighter uppercase border-r-2 border-white/10 pr-6">
                       <span>N</span><span>I</span><span>K</span><span>H</span><span>I</span><span>L</span>
@@ -572,17 +556,10 @@ export default function OGPreviewPage() {
                     </div>
                   </div>
                 </div>
-
-                <p className="text-zinc-400 text-base leading-relaxed max-w-[500px] font-sans font-medium mt-6">
-                  {ogDescription}
-                </p>
+                <p className="text-zinc-400 text-base leading-relaxed max-w-[500px] font-sans font-medium mt-6">{ogDescription}</p>
               </div>
-
-              {/* Devanagari stamp & photo right pane */}
               <div className="flex-[2] bg-black/40 flex flex-col justify-between p-12 items-center z-10 border-l border-white/5">
-                <div className="text-[#DE382B] font-serif text-3xl font-black tracking-widest leading-none self-end opacity-20">
-                  निखिल
-                </div>
+                <div className="text-[#DE382B] font-serif text-3xl font-black tracking-widest leading-none self-end opacity-20">निखिल</div>
                 <div className="relative my-auto">
                   <div className="absolute -inset-1.5 bg-gradient-to-tr from-amber-500 to-[#DE382B] rounded-3xl blur opacity-30" />
                   <img src={avatarUrl} alt={DATA.name} className="w-[180px] h-[180px] rounded-3xl object-cover grayscale contrast-125 border border-zinc-800 shadow-2xl relative z-10" />
@@ -597,48 +574,29 @@ export default function OGPreviewPage() {
           {/* ========================================================================= */}
           {selectedOption === "N" && (
             <div className="w-full h-full bg-[#0A0F1D] flex flex-col justify-between p-14 relative overflow-hidden text-[#DFBA73] border-4 border-[#DFBA73]/20 m-0">
-              
-              {/* Stepped art deco copper borders */}
               <div className="absolute inset-4 border border-[#DFBA73]/10 pointer-events-none" />
               <div className="absolute inset-6 border border-[#DFBA73]/20 pointer-events-none rounded-sm" />
-
-              {/* Queen's necklace curve vector silhouette background */}
               <svg className="absolute inset-0 w-full h-full opacity-5 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M 0,550 C 400,550 800,450 1200,600" stroke="#DFBA73" strokeWidth="8" fill="none" />
               </svg>
-
-              {/* Symmetrical Art Deco header */}
               <div className="flex justify-between items-center z-10 w-full">
                 <span className="text-[10px] font-bold tracking-[0.35em] uppercase font-mono">// BOMBAY ART DECO DESIGNATION</span>
                 <div className="flex gap-1.5">
-                  <div className="w-2 h-6 bg-[#DFBA73]/30 rounded-t" />
-                  <div className="w-2 h-10 bg-[#DFBA73]/50 rounded-t" />
-                  <div className="w-2 h-6 bg-[#DFBA73]/30 rounded-t" />
+                  <div className="w-2 h-6 bg-[#DFBA73]/30 rounded-t" /><div className="w-2 h-10 bg-[#DFBA73]/50 rounded-t" /><div className="w-2 h-6 bg-[#DFBA73]/30 rounded-t" />
                 </div>
               </div>
-
-              {/* Symmetrical split content */}
               <div className="flex justify-between items-center z-10 w-full my-8">
                 <div className="flex flex-col gap-4 max-w-[700px]">
-                  {/* Art Deco tall condensed font */}
-                  <h1 className="text-white text-7xl font-light tracking-[0.05em] uppercase font-serif leading-none">
-                    NIKHIL KATKAR
-                  </h1>
+                  <h1 className="text-white text-7xl font-light tracking-[0.05em] uppercase font-serif leading-none">NIKHIL KATKAR</h1>
                   <div className="w-16 h-[2px] bg-[#DFBA73]" />
-                  <p className="text-zinc-400 text-lg leading-relaxed font-sans font-light">
-                    {ogDescription}
-                  </p>
+                  <p className="text-zinc-400 text-lg leading-relaxed font-sans font-light">{ogDescription}</p>
                 </div>
-
                 <div className="relative p-2 border-2 border-[#DFBA73] bg-[#0A0F1D] rounded-full flex-none">
                   <img src={avatarUrl} alt={DATA.name} className="w-[180px] h-[180px] rounded-full object-cover grayscale contrast-125 shadow-2xl" />
                 </div>
               </div>
-
-              {/* Footer */}
               <div className="border-t border-[#DFBA73]/10 pt-4 text-xs font-mono flex justify-between">
-                <span>PORTAL: KATKAR.IN</span>
-                <span>MUMBAI DECO SERIES // US-NK-2026</span>
+                <span>PORTAL: KATKAR.IN</span><span>MUMBAI DECO SERIES // US-NK-2026</span>
               </div>
             </div>
           )}
@@ -648,53 +606,28 @@ export default function OGPreviewPage() {
           {/* ========================================================================= */}
           {selectedOption === "O" && (
             <div className="w-full h-full bg-[#FAF5EE] flex p-0 items-stretch overflow-hidden relative border-8 border-[#FF3B00]">
-              
-              {/* Halftone Dot patterns */}
               <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:8px_8px] pointer-events-none" />
-
-              {/* Saffron/Vermilion Sidebar */}
               <div className="w-[160px] bg-[#FF3B00] flex flex-col justify-between items-center py-10 text-white font-mono flex-none">
-                <div className="text-[11px] font-black tracking-[0.3em] uppercase transform -rotate-90 origin-center my-auto whitespace-nowrap">
-                  MADE IN BOMBAY // IND.MBOX
-                </div>
+                <div className="text-[11px] font-black tracking-[0.3em] uppercase transform -rotate-90 origin-center my-auto whitespace-nowrap">MADE IN BOMBAY // IND.MBOX</div>
                 <div className="flex flex-col gap-1 items-center border border-white/30 p-2.5 rounded bg-black/10">
-                  <span className="text-[9px] font-bold">SAFETY</span>
-                  <span className="text-sm font-black">MATCH</span>
+                  <span className="text-[9px] font-bold">SAFETY</span><span className="text-sm font-black">MATCH</span>
                 </div>
                 <span className="text-xs font-black">50 MATCHES</span>
               </div>
-
-              {/* Main Ticket Stamp Board */}
               <div className="flex-1 flex flex-col justify-between p-14 relative text-zinc-950 font-sans">
-                
-                {/* Saffron stamp badges */}
                 <div className="flex justify-between items-start">
-                  <div className="bg-[#FF3B00] text-white text-[10px] font-extrabold tracking-widest px-3 py-1 rounded uppercase font-mono border border-black/10">
-                    SPEC NO. 2026
-                  </div>
-                  <div className="text-right text-[11px] font-bold text-zinc-500 font-mono">
-                    निखिल काटकर • TCS
-                  </div>
+                  <div className="bg-[#FF3B00] text-white text-[10px] font-extrabold tracking-widest px-3 py-1 rounded uppercase font-mono border border-black/10">SPEC NO. 2026</div>
+                  <div className="text-right text-[11px] font-bold text-zinc-500 font-mono">निखिल काटकर • TCS</div>
                 </div>
-
-                {/* Giant blocky woodblock style header */}
                 <div className="flex flex-col gap-2 my-auto">
-                  <h1 className="text-zinc-900 text-7xl font-black tracking-tight leading-none uppercase font-sans">
-                    KATKAR
-                  </h1>
+                  <h1 className="text-zinc-900 text-7xl font-black tracking-tight leading-none uppercase font-sans">KATKAR</h1>
                   <span className="text-[#FF3B00] text-xs font-mono tracking-widest uppercase font-bold">FULL-STACK APPARATUS</span>
-                  <p className="text-zinc-700 text-sm leading-relaxed max-w-[500px] mt-2 font-medium">
-                    {ogDescription}
-                  </p>
+                  <p className="text-zinc-700 text-sm leading-relaxed max-w-[500px] mt-2 font-medium">{ogDescription}</p>
                 </div>
-
                 <div className="flex justify-between items-center border-t-2 border-zinc-900/10 pt-4 text-xs font-mono text-zinc-500">
-                  <span>WEBSITE: KATKAR.IN</span>
-                  <span className="text-[#FF3B00] font-bold">GITHUB: DISHAPATEL010</span>
+                  <span>WEBSITE: KATKAR.IN</span><span className="text-[#FF3B00] font-bold">GITHUB: DISHAPATEL010</span>
                 </div>
               </div>
-
-              {/* Right Profile Stub */}
               <div className="w-[280px] bg-zinc-900 flex flex-col justify-between p-10 items-center relative text-center text-white border-l-4 border-dashed border-[#FF3B00] flex-none">
                 <div className="flex flex-col items-center gap-4">
                   <div className="relative">
@@ -703,11 +636,358 @@ export default function OGPreviewPage() {
                   </div>
                   <div className="text-xs font-black font-mono bg-white/10 px-2 py-0.5 rounded text-white tracking-widest">STAMP #01</div>
                 </div>
-                <div className="text-[10px] font-mono text-zinc-500 tracking-wider">
-                  MUMBAI COMMERCIAL EPHEMERA SERIES
+                <div className="text-[10px] font-mono text-zinc-500 tracking-wider">MUMBAI COMMERCIAL EPHEMERA SERIES</div>
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================================= */}
+          {/* OPTION P: RISOGRAPH / ZINE PRINT CULTURE */}
+          {/* ========================================================================= */}
+          {selectedOption === "P" && (
+            <div className="w-full h-full bg-[#EAE8E0] flex flex-col justify-between p-14 relative overflow-hidden font-sans text-zinc-800">
+              {/* Paper grain/halftone simulation */}
+              <div className="absolute inset-0 opacity-[0.08] bg-[radial-gradient(#000_2px,transparent_2px)] bg-[size:6px_6px] pointer-events-none" />
+              {/* Crop marks in corners */}
+              <div className="absolute top-4 left-4 text-zinc-400 font-mono text-xs">+ CROP_ALIGN_01</div>
+              <div className="absolute top-4 right-4 text-zinc-400 font-mono text-xs">ALIGN_02 +</div>
+
+              <div className="flex justify-between items-center z-10 w-full my-auto">
+                <div className="flex flex-col max-w-[700px] relative">
+                  {/* Misregistered ink offset layers */}
+                  <span className="text-[#00A3E0] font-bold text-xs tracking-widest uppercase">// RISO PRINT // INK LAYER #3</span>
+                  
+                  {/* Shifted overlapping text */}
+                  <div className="relative mt-2">
+                    <h1 className="text-8xl font-black tracking-tight leading-none text-[#FF48B0] absolute top-1 left-1 opacity-70">
+                      NIKHIL KATKAR
+                    </h1>
+                    <h1 className="text-8xl font-black tracking-tight leading-none text-[#00A3E0] relative z-10 mix-blend-multiply">
+                      NIKHIL KATKAR
+                    </h1>
+                  </div>
+
+                  <p className="text-zinc-700 text-lg leading-relaxed max-w-[600px] mt-6 font-medium mix-blend-multiply">
+                    {ogDescription}
+                  </p>
+                </div>
+
+                <div className="relative flex-none">
+                  {/* Colored shadow simulating riso plate shift */}
+                  <div className="absolute -top-2 -left-2 w-[190px] h-[190px] rounded-3xl bg-[#FF48B0] opacity-80" />
+                  <div className="absolute -bottom-2 -right-2 w-[190px] h-[190px] rounded-3xl bg-[#00A3E0] opacity-80" />
+                  <img src={avatarUrl} alt={DATA.name} className="w-[190px] h-[190px] rounded-3xl object-cover grayscale mix-blend-multiply relative z-10 border border-zinc-400 bg-white" />
                 </div>
               </div>
 
+              <div className="flex justify-between items-center border-t border-zinc-400/30 pt-4 text-xs font-mono text-zinc-500">
+                <span>PLATE_01: FLUO_PINK // PLATE_02: CYAN</span>
+                <span>ZINE ISSUE #2026 // KATKAR.IN</span>
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================================= */}
+          {/* OPTION Q: DE STIJL / NEOPLASTICISM */}
+          {/* ========================================================================= */}
+          {selectedOption === "Q" && (
+            <div className="w-full h-full bg-white flex p-0 items-stretch overflow-hidden border-[12px] border-black">
+              {/* Rigid grid with black dividers */}
+              <div className="flex-[3] flex flex-col justify-between items-stretch">
+                {/* Top Section - white */}
+                <div className="flex-1 p-16 flex flex-col justify-between border-b-[12px] border-black">
+                  <h1 className="text-black text-8xl font-extrabold tracking-tighter leading-none uppercase font-sans">
+                    NIKHIL KATKAR
+                  </h1>
+                  <p className="text-zinc-800 text-lg leading-relaxed max-w-[550px] font-sans font-bold mt-4">
+                    {ogDescription}
+                  </p>
+                </div>
+
+                {/* Bottom Section divided horizontally */}
+                <div className="h-[140px] flex items-stretch border-black">
+                  <div className="flex-1 bg-[#1D3557] border-r-[12px] border-black" />
+                  <div className="flex-1 bg-white p-6 flex flex-col justify-center font-sans font-black text-xs text-black">
+                    <span>DOM: KATKAR.IN</span>
+                    <span>ATT: DISHAPATEL010</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column */}
+              <div className="w-[380px] flex flex-col items-stretch border-l-[12px] border-black flex-none">
+                <div className="flex-1 bg-[#E63946] border-b-[12px] border-black" />
+                <div className="h-[220px] bg-[#F4A261] flex justify-center items-center p-4">
+                  <img src={avatarUrl} alt={DATA.name} className="w-[160px] h-[160px] object-cover grayscale border-4 border-black" />
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================================= */}
+          {/* OPTION R: VAPORWAVE / SYNTHWAVE 80S */}
+          {/* ========================================================================= */}
+          {selectedOption === "R" && (
+            <div className="w-full h-full bg-[#0D0221] flex flex-col justify-between p-14 relative overflow-hidden text-white font-sans">
+              {/* Glowing vector sun */}
+              <div className="absolute left-[50%] top-[40%] translate-x-[-50%] translate-y-[-50%] w-[320px] h-[320px] rounded-full bg-gradient-to-b from-[#FF007F] to-[#FFD700] opacity-40 blur-md pointer-events-none" />
+
+              {/* Grid landscape at bottom */}
+              <div 
+                className="absolute bottom-0 left-0 w-full h-[220px] opacity-25 pointer-events-none"
+                style={{
+                  backgroundImage: "linear-gradient(rgba(255,0,127,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,0,127,0.3) 1px, transparent 1px)",
+                  backgroundSize: "40px 40px",
+                  transform: "perspective(200px) rotateX(60deg)",
+                  transformOrigin: "bottom center"
+                }}
+              />
+
+              {/* VHS scanlines overlay */}
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[size:100%_4px] pointer-events-none z-20" />
+
+              <div className="flex justify-between items-center z-10 w-full">
+                <span className="text-[#00F0FF] text-xs font-mono tracking-[0.4em] uppercase">// SYSTEM RETRO RUNTIME</span>
+                <span className="text-[#FF007F] text-xs font-mono tracking-widest">VHS // PLAY</span>
+              </div>
+
+              {/* Chrome style text gradient */}
+              <div className="flex justify-between items-center z-10 w-full my-auto">
+                <div className="flex flex-col gap-4">
+                  <h1 className="text-7xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] via-[#FF007F] to-[#FFD700] uppercase italic leading-none font-sans">
+                    N. KATKAR
+                  </h1>
+                  <p className="text-zinc-300 text-sm max-w-[600px] leading-relaxed font-semibold">
+                    {ogDescription}
+                  </p>
+                </div>
+
+                <div className="relative flex-none">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#FF007F] to-[#00F0FF] rounded-2xl blur opacity-75" />
+                  <img src={avatarUrl} alt={DATA.name} className="w-[180px] h-[180px] rounded-2xl object-cover relative z-10 border-2 border-white/20 bg-[#0D0221]" />
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center border-t border-white/5 pt-4 text-xs font-mono text-zinc-500 z-10">
+                <span>SIGNAL ACCESS: APPROVED</span>
+                <span>CYBERSPACE // KATKAR.IN</span>
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================================= */}
+          {/* OPTION S: JAPANESE UKIYO-E PRINT */}
+          {/* ========================================================================= */}
+          {selectedOption === "S" && (
+            <div className="w-full h-full bg-[#F2EFE9] flex flex-col justify-between p-14 relative overflow-hidden text-zinc-800">
+              {/* Organic wave outline background */}
+              <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 0,315 C 300,100 600,530 1200,315 M 0,200 C 400,400 800,100 1200,300" stroke="#1A2D42" strokeWidth="6" fill="none" />
+              </svg>
+
+              <div className="flex justify-between items-start z-10 w-full">
+                {/* Traditional Red Hanko Signature Stamp */}
+                <div className="border-[3px] border-[#DE382B] text-[#DE382B] p-2.5 flex flex-col justify-center items-center font-mono leading-none font-bold text-lg bg-transparent">
+                  <span>नि</span>
+                  <span>खि</span>
+                  <span>ल</span>
+                </div>
+                <span className="text-zinc-500 font-serif text-xs italic tracking-widest">Edo Art Spec // #2026</span>
+              </div>
+
+              {/* Minimal organic layout */}
+              <div className="flex justify-between items-center z-10 w-full my-auto">
+                <div className="flex flex-col gap-6 max-w-[700px] border-l-2 border-zinc-300 pl-8">
+                  <h1 className="text-zinc-900 text-6xl font-serif tracking-wide leading-tight">
+                    Nikhil Katkar
+                  </h1>
+                  <p className="text-zinc-700 text-base leading-relaxed font-serif font-medium">
+                    {ogDescription}
+                  </p>
+                </div>
+
+                <div className="relative p-1 bg-[#F2EFE9] border border-zinc-300 rounded flex-none shadow-md">
+                  <img src={avatarUrl} alt={DATA.name} className="w-[160px] h-[160px] rounded object-cover grayscale contrast-110" />
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center border-t border-zinc-300 pt-4 text-xs font-serif text-zinc-500">
+                <span>PORTAL: KATKAR.IN</span>
+                <span>SUMI INK & PARCHMENT CANVAS</span>
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================================= */}
+          {/* OPTION T: MEMPHISM / 80S POSTMODERNISM */}
+          {/* ========================================================================= */}
+          {selectedOption === "T" && (
+            <div className="w-full h-full bg-[#E5F9E0] flex flex-col justify-between p-14 relative overflow-hidden text-zinc-900">
+              {/* Memphis patterns in background */}
+              <div className="absolute right-10 top-10 w-[150px] h-[150px] bg-yellow-300 rounded-full border-4 border-black z-0" />
+              <div className="absolute left-[30%] bottom-[-40px] w-[80px] h-[200px] bg-purple-400 border-4 border-black transform rotate-12 z-0" />
+              
+              {/* Zig zag vector */}
+              <svg className="absolute top-[40%] right-[30%] w-[120px] h-[60px] opacity-40 z-0" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 0,30 L 30,0 L 60,30 L 90,0 L 120,30" stroke="black" strokeWidth="5" fill="none" />
+              </svg>
+
+              <div className="flex justify-between items-center z-10 w-full">
+                <span className="bg-white border-2 border-black px-3 py-1 rounded text-xs font-black tracking-wider uppercase">MEMPHIS DESIGN</span>
+                <span className="font-mono text-xs font-black">VOL. 88</span>
+              </div>
+
+              {/* Bold offset shadows */}
+              <div className="flex justify-between items-center z-10 w-full my-auto">
+                <div className="flex flex-col gap-6 max-w-[680px]">
+                  <div className="relative">
+                    <h1 className="text-7xl font-black tracking-tight leading-none text-zinc-900 border-2 border-black bg-white p-4 shadow-[6px_6px_0px_rgba(0,0,0,1)] uppercase">
+                      NIKHIL KATKAR
+                    </h1>
+                  </div>
+                  <p className="text-zinc-800 text-base leading-relaxed font-bold bg-[#FAF3DD] p-4 border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] rounded">
+                    {ogDescription}
+                  </p>
+                </div>
+
+                <div className="relative flex-none shadow-[8px_8px_0px_rgba(0,0,0,1)] border-4 border-black rounded-3xl overflow-hidden bg-white">
+                  <img src={avatarUrl} alt={DATA.name} className="w-[160px] h-[160px] object-cover" />
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center border-t-2 border-black pt-4 text-xs font-black">
+                <span>WWW.KATKAR.IN</span>
+                <span>ESTABLISHED 2026</span>
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================================= */}
+          {/* OPTION U: MINIMALIST STAINED GLASS */}
+          {/* ========================================================================= */}
+          {selectedOption === "U" && (
+            <div className="w-full h-full bg-[#0A0A0C] flex flex-col justify-between p-14 relative overflow-hidden text-white font-serif">
+              {/* Background ambient lighting casting colored glow */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 via-purple-900/30 to-red-900/40 pointer-events-none z-0" />
+
+              {/* Lead Came Lines layout */}
+              <div className="absolute inset-0 border-8 border-[#1A1A1E] z-10" />
+
+              <div className="flex justify-between items-center z-10 w-full">
+                <span className="text-[10px] tracking-[0.3em] text-zinc-500 uppercase">// APSE_GEOMETRY</span>
+                <span className="text-[10px] tracking-[0.2em] text-[#DFBA73]">ROSE WINDOW STAINED GLASS</span>
+              </div>
+
+              {/* Centered Gothic Arch look */}
+              <div className="flex justify-between items-center z-10 w-full my-auto">
+                <div className="flex flex-col gap-6 max-w-[700px] border-l-2 border-[#DFBA73] pl-8">
+                  <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#DFBA73] to-white text-6xl font-normal tracking-widest uppercase leading-none">
+                    NIKHIL KATKAR
+                  </h1>
+                  <p className="text-zinc-400 text-base leading-relaxed font-sans font-light">
+                    {ogDescription}
+                  </p>
+                </div>
+
+                {/* Stained glass portrait frame */}
+                <div className="relative p-2 border-4 border-[#1A1A1E] bg-[#0A0A0C] rounded-[100px_100px_20px_20px] overflow-hidden flex-none shadow-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-b from-blue-500/20 to-purple-500/20 pointer-events-none" />
+                  <img src={avatarUrl} alt={DATA.name} className="w-[150px] h-[190px] rounded-[90px_90px_10px_10px] object-cover grayscale opacity-80" />
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center border-t border-zinc-900 pt-4 text-xs font-mono text-zinc-600">
+                <span>PORTAL REFERENCE: KATKAR.IN</span>
+                <span>GLASS SECTIONS: RUBY // SAPPHIRE // GOLD</span>
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================================= */}
+          {/* OPTION V: PSYCHEDELIC ART / 1960S */}
+          {/* ========================================================================= */}
+          {selectedOption === "V" && (
+            <div className="w-full h-full bg-[#3C096C] flex flex-col justify-between p-14 relative overflow-hidden text-[#FF9E00] font-mono">
+              {/* Swirling psychedelic graphic vector glow background */}
+              <div className="absolute inset-[-100px] bg-[radial-gradient(circle_at_center,rgba(255,158,0,0.15)_0%,transparent_60%)] animate-pulse pointer-events-none" />
+
+              <div className="flex justify-between items-center z-10 w-full text-xs">
+                <span>// FILL_YOUR_MIND</span>
+                <span>SAN_FRANCISCO_VOL_68</span>
+              </div>
+
+              {/* Melting/warping layout */}
+              <div className="flex justify-between items-center z-10 w-full my-auto">
+                <div className="flex flex-col gap-6 max-w-[700px]">
+                  {/* Swirling layout title */}
+                  <h1 className="text-white text-7xl font-extrabold tracking-tight uppercase leading-none skew-y-1 transform -rotate-1">
+                    NIKHIL KATKAR
+                  </h1>
+                  <p className="text-[#FF9E00] text-lg leading-relaxed font-sans font-bold bg-black/30 p-5 rounded-xl border border-[#FF9E00]/20">
+                    {ogDescription}
+                  </p>
+                </div>
+
+                <div className="relative flex-none transform rotate-3">
+                  <div className="absolute -inset-3 bg-[#FF9E00] rounded-full blur-md opacity-30" />
+                  <img src={avatarUrl} alt={DATA.name} className="w-[180px] h-[180px] rounded-full object-cover grayscale contrast-125 border-4 border-[#FF9E00]" />
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center border-t border-[#FF9E00]/10 pt-4 text-xs">
+                <span>ELECTRIC CONCERT LOG: IN SESSION</span>
+                <span>PORTAL ACCESS: KATKAR.IN</span>
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================================= */}
+          {/* OPTION W: CYBERPUNK HUD / SCI-FI */}
+          {/* ========================================================================= */}
+          {selectedOption === "W" && (
+            <div className="w-full h-full bg-[#030303] flex flex-col justify-between p-12 relative overflow-hidden font-mono text-[#00FF66]">
+              {/* Hexagonal telemetry grid */}
+              <div className="absolute inset-0 opacity-5 bg-[linear-gradient(rgba(0,255,102,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,102,0.15)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
+
+              {/* HUD corner brackets */}
+              <div className="absolute top-6 left-6 w-8 h-8 border-t-2 border-l-2 border-[#00FF66]" />
+              <div className="absolute top-6 right-6 w-8 h-8 border-t-2 border-r-2 border-[#00FF66]" />
+              <div className="absolute bottom-6 left-6 w-8 h-8 border-b-2 border-l-2 border-[#00FF66]" />
+              <div className="absolute bottom-6 right-6 w-8 h-8 border-b-2 border-r-2 border-[#00FF66]" />
+
+              <div className="flex justify-between items-center z-10 w-full text-xs">
+                <span className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-[#00FF66] rounded-full animate-ping" />
+                  <span>TARGET_LOCK: ACTIVE</span>
+                </span>
+                <span>SYS_DIAGNOSTIC_V8.8</span>
+              </div>
+
+              {/* Technical HUD data layout */}
+              <div className="flex justify-between items-center z-10 w-full my-auto">
+                <div className="flex flex-col gap-4 max-w-[720px]">
+                  <div className="text-[10px] text-[#00FF66]/60 tracking-[0.35em] uppercase">SYSTEM ANALYZER // READOUT</div>
+                  <h1 className="text-white text-6xl font-black tracking-widest leading-none uppercase">
+                    NIKHIL KATKAR
+                  </h1>
+                  <p className="text-[#00FF66] text-sm leading-relaxed max-w-[580px] bg-[#00FF66]/5 p-4 border border-[#00FF66]/20 rounded">
+                    {ogDescription}
+                  </p>
+                </div>
+
+                <div className="relative p-1 border-2 border-dashed border-[#00FF66] rounded flex-none">
+                  {/* HUD wireframe crosshair overlay */}
+                  <div className="absolute top-0 left-[50%] translate-x-[-50%] w-0.5 h-full bg-[#00FF66]/40" />
+                  <div className="absolute top-[50%] left-0 translate-y-[-50%] w-full h-0.5 bg-[#00FF66]/40" />
+                  <img src={avatarUrl} alt={DATA.name} className="w-[150px] h-[150px] object-cover grayscale brightness-90 contrast-125 z-10 relative opacity-95" />
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center text-[10px] text-[#00FF66]/60 border-t border-[#00FF66]/10 pt-4">
+                <span>SECTOR: 34.8° N / 72.4° E</span>
+                <span>DECRYPTED: KATKAR.IN</span>
+                <span>STACK: NODE // AUTOMATION</span>
+              </div>
             </div>
           )}
 
