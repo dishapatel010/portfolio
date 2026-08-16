@@ -1,5 +1,16 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
+import { ReactLight } from "@/components/ui/svgs/reactLight";
+import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
+import { Typescript } from "@/components/ui/svgs/typescript";
+import { Nodejs } from "@/components/ui/svgs/nodejs";
+import { Python } from "@/components/ui/svgs/python";
+import { Golang } from "@/components/ui/svgs/golang";
+import { Postgresql } from "@/components/ui/svgs/postgresql";
+import { Docker } from "@/components/ui/svgs/docker";
+import { Kubernetes } from "@/components/ui/svgs/kubernetes";
+import { Java } from "@/components/ui/svgs/java";
+import { Csharp } from "@/components/ui/svgs/csharp";
 
 export const DATA = {
   name: "Nikhil Katkar",
@@ -12,29 +23,28 @@ export const DATA = {
   summary:
     "Experienced in backend engineering using Python, TypeScript, Flask, Next.js & REST APIs, with hands-on work in distributed systems, Docker, Cloudflare, and Azure. Practical exposure to Cybersecurity, GenAI, and data-driven automation. Strong problem-solving mindset, rapid learner, and passionate about backend, cloud, and AI engineering roles that demand innovation and performance.",
   avatarUrl: "/me.png",
-  skills: [
-    "Python",
-    "JavaScript",
-    "TypeScript",
-    "C",
-    "Flask",
-    "React",
-    "Next.js",
-    "Node.js",
-    "Azure",
-    "Oracle Cloud",
-    "Cloudflare",
-    "Docker",
-    "SQL",
-    "MongoDB",
-    "Git",
-    "REST APIs",
-    "Meta Graph API",
-    "GenAI",
-    "Data Analysis",
-    "Visualization",
-    "Better-Auth",
-    "CI/CD",
+    { name: "Python", icon: Python },
+    { name: "JavaScript" },
+    { name: "TypeScript", icon: Typescript },
+    { name: "C" },
+    { name: "Flask" },
+    { name: "React", icon: ReactLight },
+    { name: "Next.js", icon: NextjsIconDark },
+    { name: "Node.js", icon: Nodejs },
+    { name: "Azure" },
+    { name: "Oracle Cloud" },
+    { name: "Cloudflare" },
+    { name: "Docker", icon: Docker },
+    { name: "SQL" },
+    { name: "MongoDB" },
+    { name: "Git" },
+    { name: "REST APIs" },
+    { name: "Meta Graph API" },
+    { name: "GenAI" },
+    { name: "Data Analysis" },
+    { name: "Visualization" },
+    { name: "Better-Auth" },
+    { name: "CI/CD" },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -49,6 +59,7 @@ export const DATA = {
         icon: Icons.github,
         navbar: true,
       },
+
       LinkedIn: {
         name: "LinkedIn",
         url: "https://linkedin.com/in/nikhilkatkar",
@@ -74,8 +85,7 @@ export const DATA = {
       logoUrl: "https://www.tcs.com/content/dam/global-tcs/en/images/who-we-are/media-kit/TCS-logo-black-CMYK.svg",
       start: "June 2026",
       end: "Present",
-      description:
-        "Contributing as a TCSer in Mumbai, focusing on software systems development, application maintenance, and collaborative engineering practices within the delivery team.",
+      description: "Working as a TCSer in Mumbai.",
     },
     {
       company: "Tata",
