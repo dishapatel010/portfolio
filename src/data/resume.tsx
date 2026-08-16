@@ -2,17 +2,9 @@ import { Icons } from "@/components/icons";
 import {
   HomeIcon,
   NotebookIcon,
-  Code2,
   Database,
-  Cloud,
-  Terminal,
   Link2,
-  Network,
-  BrainCircuit,
-  LineChart,
   ShieldCheck,
-  InfinityIcon,
-  GitBranch,
 } from "lucide-react";
 import { ReactLight } from "@/components/ui/svgs/reactLight";
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
@@ -25,6 +17,7 @@ import { Docker } from "@/components/ui/svgs/docker";
 import { Kubernetes } from "@/components/ui/svgs/kubernetes";
 import { Java } from "@/components/ui/svgs/java";
 import { Csharp } from "@/components/ui/svgs/csharp";
+import { BrandIcon } from "@/components/brand-icon";
 
 export const DATA = {
   name: "Nikhil Katkar",
@@ -39,27 +32,27 @@ export const DATA = {
   avatarUrl: "/me.png",
   skills: [
     { name: "Python", icon: Python },
-    { name: "JavaScript", icon: Code2 },
+    { name: "JavaScript", icon: (props: any) => <BrandIcon slug="javascript" {...props} /> },
     { name: "TypeScript", icon: Typescript },
-    { name: "C", icon: Code2 },
-    { name: "Flask", icon: Terminal },
+    { name: "C", icon: (props: any) => <BrandIcon slug="c" {...props} /> },
+    { name: "Flask", icon: (props: any) => <BrandIcon slug="flask" {...props} /> },
     { name: "React", icon: ReactLight },
     { name: "Next.js", icon: NextjsIconDark },
     { name: "Node.js", icon: Nodejs },
-    { name: "Azure", icon: Cloud },
-    { name: "Oracle Cloud", icon: Cloud },
-    { name: "Cloudflare", icon: Cloud },
+    { name: "Azure", icon: (props: any) => <BrandIcon slug="microsoftazure" {...props} /> },
+    { name: "Oracle Cloud", icon: (props: any) => <BrandIcon slug="oracle" {...props} /> },
+    { name: "Cloudflare", icon: (props: any) => <BrandIcon slug="cloudflare" {...props} /> },
     { name: "Docker", icon: Docker },
     { name: "SQL", icon: Database },
-    { name: "MongoDB", icon: Database },
-    { name: "Git", icon: GitBranch },
+    { name: "MongoDB", icon: (props: any) => <BrandIcon slug="mongodb" {...props} /> },
+    { name: "Git", icon: (props: any) => <BrandIcon slug="git" {...props} /> },
     { name: "REST APIs", icon: Link2 },
-    { name: "Meta Graph API", icon: Network },
-    { name: "GenAI", icon: BrainCircuit },
-    { name: "Data Analysis", icon: LineChart },
-    { name: "Visualization", icon: LineChart },
+    { name: "Meta Graph API", icon: (props: any) => <BrandIcon slug="meta" {...props} /> },
+    { name: "GenAI", icon: (props: any) => <BrandIcon slug="openai" {...props} /> },
+    { name: "Data Analysis", icon: (props: any) => <BrandIcon slug="pandas" {...props} /> },
+    { name: "Visualization", icon: (props: any) => <BrandIcon slug="chartdotjs" {...props} /> },
     { name: "Better-Auth", icon: ShieldCheck },
-    { name: "CI/CD", icon: InfinityIcon },
+    { name: "CI/CD", icon: (props: any) => <BrandIcon slug="githubactions" {...props} /> },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
