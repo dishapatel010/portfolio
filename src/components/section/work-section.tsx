@@ -1,11 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 
 function LogoImage({ src, alt }: { src: string; alt: string }) {
   const [imageError, setImageError] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   if (!src || imageError) {
     return (
@@ -14,15 +21,18 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
   }
 
   const isTCS = src.includes("TCS-logo");
+  const isDark = mounted && resolvedTheme === "dark";
+
+  // Use the official white logo in dark mode
+  const finalSrc = (isTCS && isDark)
+    ? "https://www.tcs.com/content/dam/global-tcs/en/images/who-we-are/media-kit/TCS-logo-white.svg"
+    : src;
 
   return (
     <img
-      src={src}
+      src={finalSrc}
       alt={alt}
-      className={cn(
-        "size-8 md:size-10 border border-border/40 rounded-md overflow-hidden object-contain flex-none bg-background",
-        isTCS && "dark:invert"
-      )}
+      className="size-8 md:size-10 border border-border/40 rounded-md overflow-hidden object-contain flex-none bg-background"
       onError={() => setImageError(true)}
     />
   );
