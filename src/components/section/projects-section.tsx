@@ -31,16 +31,14 @@ export default function ProjectsSection() {
                         </p>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto auto-rows-fr">
+                <div className="columns-1 sm:columns-2 gap-3 space-y-3 max-w-[800px] mx-auto w-full">
                     {DATA.projects.map((project, id) => (
+                      <div key={project.title} className="break-inside-avoid mb-3">
                         <BlurFade
-                            key={project.title}
                             delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-                            className="h-full"
                         >
                             <ProjectCard
                                 href={project.href}
-                                key={project.title}
                                 title={project.title}
                                 description={project.description}
                                 dates={project.dates}
@@ -50,6 +48,7 @@ export default function ProjectsSection() {
                                 links={project.links}
                             />
                         </BlurFade>
+                      </div>
                     ))}
                 </div>
             </div>

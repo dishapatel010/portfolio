@@ -103,7 +103,7 @@ export const DATA = {
       school: "Wilson College, Girgaon Chowpatty, Mumbai",
       href: "https://www.wilsoncollege.edu/",
       degree: "Higher Secondary Certificate (HSC) | 84.83%",
-      logoUrl: "",
+      logoUrl: "/wilson.jpg",
       start: "2019",
       end: "2021",
       description: "",
