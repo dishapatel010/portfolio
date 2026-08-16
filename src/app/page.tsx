@@ -81,10 +81,10 @@ export default function Page() {
                       <img
                         src={education.logoUrl}
                         alt={education.school}
-                        className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none bg-background"
+                        className="size-8 md:size-10 border border-border/40 rounded-md overflow-hidden object-contain flex-none bg-background"
                       />
                     ) : (
-                      <div className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none" />
+                      <div className="size-8 md:size-10 border border-border/40 rounded-md bg-muted flex-none" />
                     )}
                     {index < DATA.education.length - 1 && (
                       <div className="w-px bg-border flex-1 min-h-[20px] mt-2" />
