@@ -14,6 +14,8 @@ const DEVICON_MAP: Record<string, string> = {
   pandas: "pandas",
   chartdotjs: "chartjs",
   githubactions: "githubactions",
+  angular: "angular",
+  springboot: "spring",
 };
 
 export function BrandIcon({ slug, className }: { slug: string; className?: string }) {

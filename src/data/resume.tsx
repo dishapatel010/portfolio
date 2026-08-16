@@ -53,6 +53,9 @@ export const DATA = {
     { name: "Visualization", icon: (props: any) => <BrandIcon slug="chartdotjs" {...props} /> },
     { name: "Better-Auth", icon: ShieldCheck },
     { name: "CI/CD", icon: (props: any) => <BrandIcon slug="githubactions" {...props} /> },
+    { name: "Java", icon: Java },
+    { name: "Angular", icon: (props: any) => <BrandIcon slug="angular" {...props} /> },
+    { name: "Spring Boot", icon: (props: any) => <BrandIcon slug="springboot" {...props} /> },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
